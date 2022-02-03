@@ -48,6 +48,7 @@ def dashboard(request):
 def add_student(request):
     if request.method == 'POST':
         fname = request.POST['fname']
+        fname = fname.strip()
         lname = request.POST['lname']
         roll = request.POST['roll'][-2:]
         mob = request.POST['mob']

@@ -19,7 +19,7 @@ def speak(text, id = None):
 
 
 def create_user(face_id, face_name):
-    cam = cv2.VideoCapture(0)
+    cam = cv2.VideoCapture(0, cv2.CAP_DSHOW)
     cam.set(3, 640)  # set video width
     cam.set(4, 480)  # set video height
 
@@ -56,7 +56,7 @@ def create_user(face_id, face_name):
             break
         elif count >= 30:  # Take 30 face sample and stop video
             break
-
+        
     print("\n[INFO] Exiting Program...")
     cam.release()
     cv2.destroyAllWindows()
